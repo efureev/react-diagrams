@@ -1,6 +1,6 @@
 # Introduction
 
-[![Join the chat at https://gitter.im/projectstorm/react-diagrams](https://badges.gitter.im/projectstorm/react-diagrams.svg)](https://gitter.im/projectstorm/react-diagrams?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![NPM](https://img.shields.io/npm/v/@projectstorm/react-diagrams.svg)](https://npmjs.org/package/@projectstorm/react-diagrams) [![Package Quality](https://npm.packagequality.com/shield/storm-react-diagrams.svg)](https://packagequality.com/#?package=storm-react-diagrams) [![CircleCI](https://circleci.com/gh/projectstorm/react-diagrams/tree/master.svg?style=svg)](https://circleci.com/gh/projectstorm/react-diagrams/tree/master) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Join the chat at https://gitter.im/projectstorm/react-diagrams](https://badges.gitter.im/projectstorm/react-diagrams.svg)](https://gitter.im/projectstorm/react-diagrams?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![NPM](https://img.shields.io/npm/v/@projectstorm/react-diagrams.svg)](https://npmjs.org/package/@projectstorm/react-diagrams) [![Package Quality](https://npm.packagequality.com/shield/storm-react-diagrams.svg)](https://packagequality.com/#?package=storm-react-diagrams)
 
 ![](.gitbook/assets/logo.jpg)
 
@@ -70,7 +70,7 @@ yarn add @projectstorm/react-diagrams-routing
 
 ## How to use
 
-Before running any of the examples, please run `yarn build` in the root. This project is a monorepo, and the packages (including the demos) require the packages to first be built.
+Before running any of the examples, please run `pnpm build` in the root. This project is a monorepo, and the packages (including the demos) require the packages to first be built.
 
 
 Take a look at the [diagram demos](https://github.com/projectstorm/react-diagrams/tree/master/diagrams-demo-gallery/demos)
@@ -85,11 +85,11 @@ Take a look at the [demo project](https://github.com/projectstorm/react-diagrams
 
 ## Run the demos
 
-After running `yarn install` and `yarn build`, you must then run: `cd diagrams-demo-gallery && yarn run start`
+After running `pnpm install` and `pnpm build`, you must then run: `cd diagrams-demo-gallery && pnpm run start`
 
 ## Building from source
 
-Simply run `yarn` then `yarn build` or `yarn build:prod` in the root directory and it will spit out the transpiled code and typescript definitions into the dist directory as a single file.
+Simply run `pnpm` then `pnpm build` or `pnpm build:prod` in the root directory and it will spit out the transpiled code and typescript definitions into the dist directory as a single file.
 
 ## Built with react-diagrams
 

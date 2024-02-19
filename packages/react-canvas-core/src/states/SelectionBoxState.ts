@@ -2,7 +2,9 @@ import { AbstractDisplacementState, AbstractDisplacementStateEvent } from '../co
 import { State } from '../core-state/State';
 import { SelectionLayerModel } from '../entities/selection/SelectionLayerModel';
 import { Point, Rectangle } from '@projectstorm/geometry';
+import { BasePositionModel } from '../core-models/BasePositionModel';
 import { ModelGeometryInterface } from '../core/ModelGeometryInterface';
+import { CanvasEngine } from '../CanvasEngine';
 
 export interface SimpleClientRect {
 	left: number;
@@ -13,7 +15,7 @@ export interface SimpleClientRect {
 	bottom: number;
 }
 
-export class SelectionBoxState extends AbstractDisplacementState {
+export class SelectionBoxState<E extends CanvasEngine = CanvasEngine> extends AbstractDisplacementState<E> {
 	layer: SelectionLayerModel;
 
 	constructor() {
@@ -67,7 +69,11 @@ export class SelectionBoxState extends AbstractDisplacementState {
 		if (event.virtualDisplacementY < 0) {
 			relative.y -= Math.abs(event.virtualDisplacementY);
 		}
-		const rect = new Rectangle(relative, Math.abs(event.virtualDisplacementX), Math.abs(event.virtualDisplacementY));
+		const rect = Rectangle.fromPointAndSize(
+			relative,
+			Math.abs(event.virtualDisplacementX),
+			Math.abs(event.virtualDisplacementY)
+		);
 
 		for (let model of this.engine.getModel().getSelectionEntities()) {
 			if ((model as unknown as ModelGeometryInterface).getBoundingBox) {
